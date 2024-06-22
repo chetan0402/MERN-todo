@@ -6,4 +6,9 @@ router.get('/message', function(req, res, next) {
   res.send({"message":"working?"})
 });
 
+
+router.post("/add",(req,res,next)=>{
+  console.log(req.body)
+})
+
 module.exports = router;

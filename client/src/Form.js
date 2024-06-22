@@ -21,7 +21,7 @@ function Form(){
     return (
         <form onSubmit={handleSubmit}>
                 <input type="text" value={value} onInput={handleChange}></input>
-                <submit></submit>
+                <input type="submit" value="Submit"></input>
         </form>
     );
 }
