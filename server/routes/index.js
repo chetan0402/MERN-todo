@@ -24,7 +24,7 @@ router.post("/add", async (req, res, next) => {
     const db = await connectToDb();
     let result = await db.collection("tasks").insertOne(req.body);
     if (result.acknowledged) {
-      res.send({"id": result.id});
+      res.send({"id": result._id,"task": req.body.task, "status": req.body.status});
     } else {
       res.status(500).send({"message": "failed"});
     }

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function Form(){
+function Form({ onAddTask }){
     const [value, setValue] = useState('');
 
     function handleSubmit(e){
@@ -12,6 +12,11 @@ function Form(){
             },
             body: JSON.stringify({task: value})
         })
+        .then(response => response.json())
+        .then(data => {
+            onAddTask(data);
+            setValue('');
+        });
     }
 
     function handleChange(e){

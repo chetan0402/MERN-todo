@@ -1,18 +1,6 @@
-import React, { useState,useEffect} from 'react';
 import "./TaskList.css";
 
-function TaskList(){
-    const [tasks, setTasks] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:8000/getAll",{
-            method:"POST"
-        })
-        .then(res => res.json())
-        .then(data => {
-            setTasks(data);
-        });
-    }, []);
+function TaskList({tasks,setTasks}){
 
     function handleClick(id){
         fetch("http://localhost:8000/delete",{
