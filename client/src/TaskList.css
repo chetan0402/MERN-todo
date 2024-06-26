@@ -1,0 +1,11 @@
+.taskButton{
+    display:inline-block;
+    height: 1em;
+    border-radius: 50px;
+    border:0;
+}
+
+.task{
+    display:inline-block;
+    margin: auto 10px;
+}

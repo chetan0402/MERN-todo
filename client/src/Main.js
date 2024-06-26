@@ -1,4 +1,5 @@
 import Form from './Form';
+import TaskList from './TaskList';
 
 function Main(){
     return (
@@ -7,6 +8,7 @@ function Main(){
                 <h1>Enter a task</h1>
             </div>
             <Form/>
+            <TaskList/>
         </div>
     );
 }
