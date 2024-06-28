@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const connectToDb = require("../db/conn");
+const { ObjectId } = require('mongodb');
 
 /* GET home page. */
 router.get('/message', function(req, res, next) {
@@ -64,7 +65,7 @@ router.post("/update", async (req, res, next) => {
 router.post("/delete", async (req, res, next) => {
   try {
     const db = await connectToDb();
-    let result = await db.collection("tasks").deleteOne({_id: req.body.id});
+    let result = await db.collection("tasks").deleteOne({_id: new ObjectId(req.body.id)});
     if (result.acknowledged) {
       res.send({"id": result.id});
     } else {

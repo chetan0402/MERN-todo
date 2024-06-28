@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './Form.css';
 
 function Form({ onAddTask }){
     const [value, setValue] = useState('');
@@ -26,7 +27,7 @@ function Form({ onAddTask }){
     return (
         <form onSubmit={handleSubmit}>
                 <input type="text" value={value} onInput={handleChange}></input>
-                <input type="submit" value="Submit"></input>
+                <input type="submit" value="Add"></input>
         </form>
     );
 }

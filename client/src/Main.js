@@ -1,6 +1,7 @@
 import Form from './Form';
 import TaskList from './TaskList';
 import {useState, useEffect} from 'react';
+import './Main.css';
 
 function Main(){
     const [tasks, setTasks] = useState([]);
@@ -17,10 +18,8 @@ function Main(){
         });
     }, []);
     return (
-        <div>
-            <div>
-                <h1>Enter a task</h1>
-            </div>
+        <div id='mainContainer'>
+            <h1>Enter a task</h1>
             <Form onAddTask={addTask}/>
             <TaskList tasks={tasks} setTasks={setTasks}/>
         </div>
